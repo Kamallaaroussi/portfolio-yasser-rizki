@@ -1,0 +1,152 @@
+"use client";
+import React from 'react';
+import { motion } from 'framer-motion';
+import { ChevronDown, Instagram, Youtube, Linkedin } from 'lucide-react';
+
+export default function HeroSection() {
+    const scrollToSection = () => {
+        document.getElementById('milestones')?.scrollIntoView({ behavior: 'smooth' });
+    };
+
+    return (
+        <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#0F172A]">
+            {/* Background gradient overlay */}
+            <div className="absolute inset-0 bg-gradient-to-br from-[#0F172A] via-[#1E293B] to-[#0F172A]" />
+
+            {/* Animated lines */}
+            <div className="absolute inset-0 overflow-hidden">
+                <div className="absolute top-0 left-1/4 w-px h-full bg-gradient-to-b from-transparent via-[#3B82F6]/20 to-transparent" />
+                <div className="absolute top-0 right-1/3 w-px h-full bg-gradient-to-b from-transparent via-[#3B82F6]/10 to-transparent" />
+            </div>
+
+            {/* Content */}
+            <div className="relative z-10 container mx-auto px-6 py-20">
+                <div className="grid lg:grid-cols-2 gap-12 items-center">
+                    {/* Text Content */}
+                    <motion.div
+                        initial={{ opacity: 0, x: -50 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.8, ease: "easeOut" }}
+                        className="text-center lg:text-left"
+                    >
+                        <motion.span
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ delay: 0.2 }}
+                            className="inline-block px-4 py-2 bg-[#3B82F6]/10 border border-[#3B82F6]/30 rounded-full text-[#3B82F6] text-sm font-medium tracking-widest uppercase mb-6"
+                        >
+                            Professional Footballer
+                        </motion.span>
+
+                        <motion.h1
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ delay: 0.3 }}
+                            className="text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-4 tracking-tight"
+                        >
+                            YASSER
+                            <span className="block text-[#3B82F6]">RIZKI</span>
+                        </motion.h1>
+
+                        <motion.p
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ delay: 0.4 }}
+                            className="text-gray-400 text-lg md:text-xl max-w-md mx-auto lg:mx-0 mb-8 leading-relaxed"
+                        >
+                            Defensive Midfielder #6 , Dedicated to success
+                        </motion.p>
+
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ delay: 0.5 }}
+                            className="flex items-center gap-6 justify-center lg:justify-start"
+                        >
+                            <div className="flex items-center gap-4">
+                                <a
+                                    href="https://www.instagram.com/yasserrizki?igsh=cXZnZXNmcm5kZ3Vr"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="p-3 bg-white/5 hover:bg-[#3B82F6]/20 border border-white/10 hover:border-[#3B82F6]/50 rounded-full transition-all duration-300"
+                                >
+                                    <Instagram className="w-5 h-5 text-white" />
+                                </a>
+                                <a
+                                    href="https://youtube.com/@yasserrizki9924?si=ldFvTchUTI-ripkw"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="p-3 bg-white/5 hover:bg-[#3B82F6]/20 border border-white/10 hover:border-[#3B82F6]/50 rounded-full transition-all duration-300"
+                                >
+                                    <Youtube className="w-5 h-5 text-white" />
+                                </a>
+                                <a
+                                    href="https://www.linkedin.com/in/yasser-rizki-b679a1287?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="p-3 bg-white/5 hover:bg-[#3B82F6]/20 border border-white/10 hover:border-[#3B82F6]/50 rounded-full transition-all duration-300"
+                                >
+                                    <Linkedin className="w-5 h-5 text-white" />
+                                </a>
+                            </div>
+                        </motion.div>
+
+                        {/* Stats */}
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ delay: 0.6 }}
+                            className="grid gap-6 mt-12 pt-12 border-t border-white/10"
+                        >
+                            <div className="grid grid-cols-2 gap-4">
+                                <div>
+                                    <p className="text-gray-400 text-xs uppercase tracking-wider mb-1">Height</p>
+                                    <span className="text-2xl font-bold text-white">181cm</span>
+                                </div>
+                                <div>
+                                    <p className="text-gray-400 text-xs uppercase tracking-wider mb-1">Weight</p>
+                                    <span className="text-2xl font-bold text-white">73kg</span>
+                                </div>
+                            </div>
+                            <div>
+                                <p className="text-gray-400 text-xs uppercase tracking-wider mb-1">Strong Foot</p>
+                                <span className="text-2xl font-bold text-[#3B82F6]">Left</span>
+                            </div>
+                            <div>
+                                <p className="text-gray-400 text-xs uppercase tracking-wider mb-1">Primary Position</p>
+                                <span className="text-xl font-bold text-white">Defensive Midfielder</span>
+                                <span className="text-[#3B82F6] ml-2 text-xl font-bold">6</span>
+                            </div>
+                            <div>
+                                <p className="text-gray-400 text-xs uppercase tracking-wider mb-1">Secondary Position</p>
+                                <span className="text-xl font-bold text-white">Central Midfielder</span>
+                                <span className="text-[#3B82F6] ml-2 text-xl font-bold">8</span>
+                            </div>
+                            <div>
+                                <p className="text-gray-400 text-xs uppercase tracking-wider mb-1">Nationality</p>
+                                <span className="text-2xl font-bold text-white">🇲🇦 Morocco</span>
+                            </div>
+                        </motion.div>
+                    </motion.div>
+                </div>
+            </div>
+
+            {/* Scroll indicator */}
+            <motion.button
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 1 }}
+                onClick={scrollToSection}
+                className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-gray-500 hover:text-[#3B82F6] transition-colors cursor-pointer"
+            >
+                <span className="text-xs uppercase tracking-widest">Scroll</span>
+                <motion.div
+                    animate={{ y: [0, 8, 0] }}
+                    transition={{ repeat: Infinity, duration: 1.5 }}
+                >
+                    <ChevronDown className="w-5 h-5" />
+                </motion.div>
+            </motion.button>
+        </section>
+    );
+}
