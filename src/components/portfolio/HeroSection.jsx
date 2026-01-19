@@ -1,4 +1,5 @@
 "use client";
+
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ChevronDown, Instagram, Youtube, Linkedin } from 'lucide-react';
@@ -20,14 +21,15 @@ export default function HeroSection() {
             </div>
 
             {/* Content */}
-            <div className="relative z-10 container mx-auto px-6 py-20">
+            <div className="relative z-10 container mx-auto px-6 py-20 pt-32">
                 <div className="grid lg:grid-cols-2 gap-12 items-center">
-                    {/* Text Content */}
+
+                    {/* --- LEFT COLUMN: TEXT --- */}
                     <motion.div
                         initial={{ opacity: 0, x: -50 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.8, ease: "easeOut" }}
-                        className="text-center lg:text-left"
+                        className="text-center lg:text-left order-2 lg:order-1"
                     >
                         <motion.span
                             initial={{ opacity: 0, y: 20 }}
@@ -128,6 +130,38 @@ export default function HeroSection() {
                             </div>
                         </motion.div>
                     </motion.div>
+
+                    {/* --- RIGHT COLUMN: IMAGE --- */}
+                    {/* CHANGEMENT ICI : j'ai remplacé 'lg:justify-end' par 'justify-center' */}
+                    <motion.div
+                        initial={{ opacity: 0, x: 50 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+                        className="relative order-1 lg:order-2 flex justify-center"
+                    >
+                        {/* Image Container with styling */}
+                        <div className="relative w-full max-w-md aspect-[3/4] rounded-3xl overflow-hidden border-4 border-white/5 shadow-2xl shadow-[#3B82F6]/20">
+
+                            {/* Overlay gradient for better text readability integration */}
+                            <div className="absolute inset-0 bg-gradient-to-t from-[#0F172A]/80 via-transparent to-transparent z-10" />
+
+                            <img
+                                src="/Yasser.jpg"
+                                alt="Yasser Rizki playing football"
+                                className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-700"
+                            />
+
+                            {/* Optional floating badge on image */}
+                            <div className="absolute bottom-6 left-6 z-20 bg-white/10 backdrop-blur-md border border-white/20 p-4 rounded-xl">
+                                <p className="text-white font-bold text-lg">S.C.C.M</p>
+                                <p className="text-[#3B82F6] text-sm">2023 / 2024</p>
+                            </div>
+                        </div>
+
+                        {/* Decorative background blur behind image */}
+                        <div className="absolute -inset-4 bg-[#3B82F6]/20 blur-3xl -z-10 rounded-full" />
+                    </motion.div>
+
                 </div>
             </div>
 
@@ -137,7 +171,7 @@ export default function HeroSection() {
                 animate={{ opacity: 1 }}
                 transition={{ delay: 1 }}
                 onClick={scrollToSection}
-                className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-gray-500 hover:text-[#3B82F6] transition-colors cursor-pointer"
+                className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-gray-500 hover:text-[#3B82F6] transition-colors cursor-pointer z-20"
             >
                 <span className="text-xs uppercase tracking-widest">Scroll</span>
                 <motion.div

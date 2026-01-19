@@ -1,5 +1,6 @@
 "use client";
-import React, { useState, useEffect } from 'react';
+
+import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 
@@ -13,17 +14,7 @@ const navLinks = [
 ];
 
 export default function Navbar() {
-    const [isScrolled, setIsScrolled] = useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
-    // Détecte le scroll pour changer le fond de la barre
-    useEffect(() => {
-        const handleScroll = () => {
-            setIsScrolled(window.scrollY > 50);
-        };
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
 
     return (
         <>
@@ -31,15 +22,14 @@ export default function Navbar() {
                 initial={{ y: -100 }}
                 animate={{ y: 0 }}
                 transition={{ duration: 0.5 }}
-                className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
-                    ? 'bg-[#0F172A]/90 backdrop-blur-lg border-b border-white/5'
-                    : 'bg-transparent'
-                    }`}
+                // MODIFICATION ICI : On force le bg-[#0F172A] (couleur du site) tout le temps.
+                // On ajoute z-50 pour être sûr qu'elle passe au-dessus de tout.
+                className="fixed top-0 left-0 right-0 z-50 bg-[#0F172A] border-b border-white/10 shadow-lg"
             >
                 <div className="container mx-auto px-6">
                     <div className="flex items-center justify-between h-20">
                         {/* Logo */}
-                        <a href="#" className="text-xl font-bold text-white">
+                        <a href="#" className="text-xl font-bold text-white flex items-center gap-2">
                             YR<span className="text-[#3B82F6]">.</span>
                         </a>
 
@@ -49,7 +39,7 @@ export default function Navbar() {
                                 <a
                                     key={index}
                                     href={link.href}
-                                    className="text-gray-400 hover:text-white text-sm font-medium tracking-wide transition-colors relative group"
+                                    className="text-gray-300 hover:text-white text-sm font-medium tracking-wide transition-colors relative group"
                                 >
                                     {link.label}
                                     <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#3B82F6] group-hover:w-full transition-all duration-300" />
@@ -60,7 +50,7 @@ export default function Navbar() {
                         {/* CTA Button */}
                         <a
                             href="#contact"
-                            className="hidden md:inline-flex px-6 py-2.5 bg-[#3B82F6] hover:bg-[#2563EB] text-white font-semibold text-sm rounded-full transition-all"
+                            className="hidden md:inline-flex px-6 py-2.5 bg-[#3B82F6] hover:bg-[#2563EB] text-white font-semibold text-sm rounded-full transition-all shadow-lg shadow-[#3B82F6]/20"
                         >
                             Get in Touch
                         </a>
@@ -83,7 +73,7 @@ export default function Navbar() {
                         initial={{ opacity: 0, y: -20 }}
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: -20 }}
-                        className="fixed inset-0 z-40 bg-[#0F172A]/98 backdrop-blur-lg pt-24 md:hidden"
+                        className="fixed inset-0 z-40 bg-[#0F172A] pt-24 md:hidden"
                     >
                         <div className="container mx-auto px-6">
                             <div className="flex flex-col gap-6">
