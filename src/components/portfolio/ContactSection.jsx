@@ -1,4 +1,3 @@
-"use client";
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Mail, Phone, MapPin, Instagram, Youtube, Linkedin } from 'lucide-react';
@@ -28,13 +27,13 @@ const socialLinks = [
     {
         icon: Instagram,
         label: 'Instagram',
-        href: 'https://www.instagram.com/yasserrizki?igsh=cXZnZXNmcm5kZ3Vr',
+        href: 'https://www.instagram.com/yasserrizki?igsh=N2lqaHp6a29nMjFv&utm_source=qr',
         followers: 'Follow'
     },
     {
         icon: Youtube,
         label: 'YouTube',
-        href: 'https://youtube.com/@yasserrizki9924?si=ldFvTchUTI-ripkw',
+        href: 'https://youtu.com/furj4gPchxs?si=gp_8bUvmoC0-dppS',
         followers: 'Subscribe'
     },
     {

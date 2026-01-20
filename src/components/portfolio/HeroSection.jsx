@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ChevronDown, Instagram, Youtube, Linkedin } from 'lucide-react';
+import { ChevronDown, Instagram, Youtube, Linkedin, FileDown } from 'lucide-react'; // J'ai ajouté FileDown pour l'icône du CV
 
 export default function HeroSection() {
     const scrollToSection = () => {
@@ -59,6 +59,23 @@ export default function HeroSection() {
                             Defensive Midfielder #6 , Dedicated to success
                         </motion.p>
 
+                        {/* --- NOUVEAU BOUTON CV --- */}
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ delay: 0.45 }}
+                            className="mb-8 flex justify-center lg:justify-start"
+                        >
+                            <a
+                                href="/Yasser_Rizki_CV.pdf" // Assure-toi que le fichier est bien nommé ainsi dans 'public'
+                                download="Yasser_Rizki_CV.pdf"
+                                className="group flex items-center gap-3 px-8 py-4 bg-[#3B82F6] hover:bg-[#2563EB] text-white font-bold rounded-full transition-all shadow-lg shadow-[#3B82F6]/25 hover:shadow-[#3B82F6]/40 hover:-translate-y-1"
+                            >
+                                <FileDown className="w-5 h-5 group-hover:animate-bounce" />
+                                <span>Download Resume</span>
+                            </a>
+                        </motion.div>
+
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
@@ -66,16 +83,18 @@ export default function HeroSection() {
                             className="flex items-center gap-6 justify-center lg:justify-start"
                         >
                             <div className="flex items-center gap-4">
+                                {/* Nouveau lien Instagram */}
                                 <a
-                                    href="https://www.instagram.com/yasserrizki?igsh=cXZnZXNmcm5kZ3Vr"
+                                    href="https://www.instagram.com/yasserrizki?igsh=N2lqaHp6a29nMjFv&utm_source=qr"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="p-3 bg-white/5 hover:bg-[#3B82F6]/20 border border-white/10 hover:border-[#3B82F6]/50 rounded-full transition-all duration-300"
                                 >
                                     <Instagram className="w-5 h-5 text-white" />
                                 </a>
+                                {/* Nouveau lien YouTube */}
                                 <a
-                                    href="https://youtube.com/@yasserrizki9924?si=ldFvTchUTI-ripkw"
+                                    href="https://youtu.com/furj4gPchxs?si=gp_8bUvmoC0-dppS"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="p-3 bg-white/5 hover:bg-[#3B82F6]/20 border border-white/10 hover:border-[#3B82F6]/50 rounded-full transition-all duration-300"
@@ -93,14 +112,18 @@ export default function HeroSection() {
                             </div>
                         </motion.div>
 
-                        {/* Stats */}
+                        {/* Stats - Avec l'âge ajouté */}
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.6 }}
                             className="grid gap-6 mt-12 pt-12 border-t border-white/10"
                         >
-                            <div className="grid grid-cols-2 gap-4">
+                            <div className="grid grid-cols-3 gap-4"> {/* Changé en 3 colonnes pour inclure l'âge */}
+                                <div>
+                                    <p className="text-gray-400 text-xs uppercase tracking-wider mb-1">Age</p>
+                                    <span className="text-2xl font-bold text-white">22</span>
+                                </div>
                                 <div>
                                     <p className="text-gray-400 text-xs uppercase tracking-wider mb-1">Height</p>
                                     <span className="text-2xl font-bold text-white">181cm</span>
@@ -132,40 +155,29 @@ export default function HeroSection() {
                     </motion.div>
 
                     {/* --- RIGHT COLUMN: IMAGE --- */}
-                    {/* CHANGEMENT ICI : j'ai remplacé 'lg:justify-end' par 'justify-center' */}
                     <motion.div
                         initial={{ opacity: 0, x: 50 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
                         className="relative order-1 lg:order-2 flex justify-center"
                     >
-                        {/* Image Container with styling */}
+                        {/* Image Container */}
                         <div className="relative w-full max-w-md aspect-[3/4] rounded-3xl overflow-hidden border-4 border-white/5 shadow-2xl shadow-[#3B82F6]/20">
-
-                            {/* Overlay gradient for better text readability integration */}
                             <div className="absolute inset-0 bg-gradient-to-t from-[#0F172A]/80 via-transparent to-transparent z-10" />
-
                             <img
                                 src="/Yasser.jpg"
                                 alt="Yasser Rizki playing football"
                                 className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-700"
                             />
-
-                            {/* Optional floating badge on image */}
-                            <div className="absolute bottom-6 left-6 z-20 bg-white/10 backdrop-blur-md border border-white/20 p-4 rounded-xl">
-                                <p className="text-white font-bold text-lg">S.C.C.M</p>
-                                <p className="text-[#3B82F6] text-sm">2023 / 2024</p>
-                            </div>
+                            {/* J'AI RETIRÉ LE BLOC FLOTTANT SCCM ICI COMME DEMANDÉ */}
                         </div>
 
-                        {/* Decorative background blur behind image */}
                         <div className="absolute -inset-4 bg-[#3B82F6]/20 blur-3xl -z-10 rounded-full" />
                     </motion.div>
 
                 </div>
             </div>
 
-            {/* Scroll indicator */}
             <motion.button
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
