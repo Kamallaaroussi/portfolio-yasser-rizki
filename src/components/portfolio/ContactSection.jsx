@@ -34,7 +34,7 @@ const socialLinks = [
     {
         icon: Youtube,
         label: 'YouTube',
-        href: 'https://youtu.com/furj4gPchxs?si=gp_8bUvmoC0-dppS',
+        href: 'https://youtu.be/furj4gPchxs?si=gp_8bUvmoC0-dppS',
         followers: 'Subscribe'
     },
     {

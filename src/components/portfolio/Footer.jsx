@@ -14,7 +14,7 @@ const navLinks = [
 
 const socialLinks = [
     { icon: Instagram, href: 'https://www.instagram.com/yasserrizki?igsh=N2lqaHp6a29nMjFv&utm_source=qr' },
-    { icon: Youtube, href: 'https://youtu.com/furj4gPchxs?si=gp_8bUvmoC0-dppS' },
+    { icon: Youtube, href: 'https://youtu.be/furj4gPchxs?si=gp_8bUvmoC0-dppS' },
     { icon: Linkedin, href: 'https://www.linkedin.com/in/yasser-rizki-b679a1287?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app' },
 ];
 

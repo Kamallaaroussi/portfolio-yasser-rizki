@@ -1,8 +1,7 @@
 "use client";
-
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ChevronDown, Instagram, Youtube, Linkedin, FileDown } from 'lucide-react'; // J'ai ajouté FileDown pour l'icône du CV
+import { ChevronDown, Instagram, Youtube, Linkedin, FileDown } from 'lucide-react';
 
 export default function HeroSection() {
     const scrollToSection = () => {
@@ -11,20 +10,16 @@ export default function HeroSection() {
 
     return (
         <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#0F172A]">
-            {/* Background gradient overlay */}
             <div className="absolute inset-0 bg-gradient-to-br from-[#0F172A] via-[#1E293B] to-[#0F172A]" />
 
-            {/* Animated lines */}
             <div className="absolute inset-0 overflow-hidden">
                 <div className="absolute top-0 left-1/4 w-px h-full bg-gradient-to-b from-transparent via-[#3B82F6]/20 to-transparent" />
                 <div className="absolute top-0 right-1/3 w-px h-full bg-gradient-to-b from-transparent via-[#3B82F6]/10 to-transparent" />
             </div>
 
-            {/* Content */}
             <div className="relative z-10 container mx-auto px-6 py-20 pt-32">
                 <div className="grid lg:grid-cols-2 gap-12 items-center">
 
-                    {/* --- LEFT COLUMN: TEXT --- */}
                     <motion.div
                         initial={{ opacity: 0, x: -50 }}
                         animate={{ opacity: 1, x: 0 }}
@@ -59,7 +54,7 @@ export default function HeroSection() {
                             Defensive Midfielder #6 , Dedicated to success
                         </motion.p>
 
-                        {/* --- NOUVEAU BOUTON CV --- */}
+                        {/* --- BOUTON CV MIS À JOUR --- */}
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
@@ -67,8 +62,11 @@ export default function HeroSection() {
                             className="mb-8 flex justify-center lg:justify-start"
                         >
                             <a
-                                href="/Yasser_Rizki_CV.pdf" // Assure-toi que le fichier est bien nommé ainsi dans 'public'
-                                download="Yasser_Rizki_CV.pdf"
+                                // CORRECTION ICI : Nom exact du fichier avec l'espace
+                                href="/Yasser_ Rizki_CV.pdf"
+                                download="Yasser_ Rizki_CV.pdf"
+                                target="_blank"
+                                rel="noopener noreferrer"
                                 className="group flex items-center gap-3 px-8 py-4 bg-[#3B82F6] hover:bg-[#2563EB] text-white font-bold rounded-full transition-all shadow-lg shadow-[#3B82F6]/25 hover:shadow-[#3B82F6]/40 hover:-translate-y-1"
                             >
                                 <FileDown className="w-5 h-5 group-hover:animate-bounce" />
@@ -83,7 +81,6 @@ export default function HeroSection() {
                             className="flex items-center gap-6 justify-center lg:justify-start"
                         >
                             <div className="flex items-center gap-4">
-                                {/* Nouveau lien Instagram */}
                                 <a
                                     href="https://www.instagram.com/yasserrizki?igsh=N2lqaHp6a29nMjFv&utm_source=qr"
                                     target="_blank"
@@ -92,9 +89,8 @@ export default function HeroSection() {
                                 >
                                     <Instagram className="w-5 h-5 text-white" />
                                 </a>
-                                {/* Nouveau lien YouTube */}
                                 <a
-                                    href="https://youtu.com/furj4gPchxs?si=gp_8bUvmoC0-dppS"
+                                    href="https://youtu.be/furj4gPchxs?si=gp_8bUvmoC0-dppS"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="p-3 bg-white/5 hover:bg-[#3B82F6]/20 border border-white/10 hover:border-[#3B82F6]/50 rounded-full transition-all duration-300"
@@ -112,14 +108,13 @@ export default function HeroSection() {
                             </div>
                         </motion.div>
 
-                        {/* Stats - Avec l'âge ajouté */}
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.6 }}
                             className="grid gap-6 mt-12 pt-12 border-t border-white/10"
                         >
-                            <div className="grid grid-cols-3 gap-4"> {/* Changé en 3 colonnes pour inclure l'âge */}
+                            <div className="grid grid-cols-3 gap-4">
                                 <div>
                                     <p className="text-gray-400 text-xs uppercase tracking-wider mb-1">Age</p>
                                     <span className="text-2xl font-bold text-white">22</span>
@@ -154,14 +149,12 @@ export default function HeroSection() {
                         </motion.div>
                     </motion.div>
 
-                    {/* --- RIGHT COLUMN: IMAGE --- */}
                     <motion.div
                         initial={{ opacity: 0, x: 50 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
                         className="relative order-1 lg:order-2 flex justify-center"
                     >
-                        {/* Image Container */}
                         <div className="relative w-full max-w-md aspect-[3/4] rounded-3xl overflow-hidden border-4 border-white/5 shadow-2xl shadow-[#3B82F6]/20">
                             <div className="absolute inset-0 bg-gradient-to-t from-[#0F172A]/80 via-transparent to-transparent z-10" />
                             <img
@@ -169,7 +162,6 @@ export default function HeroSection() {
                                 alt="Yasser Rizki playing football"
                                 className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-700"
                             />
-                            {/* J'AI RETIRÉ LE BLOC FLOTTANT SCCM ICI COMME DEMANDÉ */}
                         </div>
 
                         <div className="absolute -inset-4 bg-[#3B82F6]/20 blur-3xl -z-10 rounded-full" />
