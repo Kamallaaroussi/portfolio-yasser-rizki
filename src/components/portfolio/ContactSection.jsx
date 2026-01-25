@@ -1,24 +1,24 @@
 "use client";
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Mail, Phone, MapPin, Instagram, Youtube, Linkedin } from 'lucide-react';
+import { Mail, MapPin, Instagram, Youtube, Linkedin, Briefcase } from 'lucide-react';
 
 const contactInfo = [
     {
-        icon: Mail,
-        label: 'Email',
-        value: 'yasser.rizki2004@gmail.com',
-        link: 'mailto:yasser.rizki2004@gmail.com',
+        icon: Briefcase,
+        label: 'FIFA Agent',
+        value: 'Sofwan Amireh',
+        link: null, // Pas de lien cliquable pour le nom, juste l'info
     },
     {
-        icon: Phone,
-        label: 'Phone',
-        value: '+1 518 971 6353',
-        link: 'tel:+15189716353',
+        icon: Mail,
+        label: 'Agent Email',
+        value: 'Sofwan@rihlasoccer.com',
+        link: 'mailto:Sofwan@rihlasoccer.com',
     },
     {
         icon: MapPin,
-        label: 'Location',
+        label: 'Current Location',
         value: 'Albany, New York, United States',
         link: null,
     },
@@ -58,8 +58,8 @@ export default function ContactSection() {
                     transition={{ duration: 0.6 }}
                     className="text-center mb-16"
                 >
-                    <span className="text-[#3B82F6] text-sm font-medium tracking-widest uppercase">Connect</span>
-                    <h2 className="text-4xl md:text-5xl font-bold text-white mt-2">Get In Touch</h2>
+                    <span className="text-[#3B82F6] text-sm font-medium tracking-widest uppercase">Representation</span>
+                    <h2 className="text-4xl md:text-5xl font-bold text-white mt-2">Contact Management</h2>
                     <div className="w-20 h-1 bg-[#3B82F6] mt-6 mx-auto" />
                 </motion.div>
 
@@ -88,7 +88,7 @@ export default function ContactSection() {
                                     </div>
                                     <div>
                                         <p className="text-gray-500 text-sm uppercase tracking-wider">{info.label}</p>
-                                        <p className="text-white font-medium mt-1">{info.value}</p>
+                                        <p className="text-white font-medium mt-1 break-words">{info.value}</p>
                                     </div>
                                 </motion.a>
                             ))}
